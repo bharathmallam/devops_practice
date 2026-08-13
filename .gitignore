@@ -7,3 +7,6 @@ terraform.tfstate.backup
 
 *.pem
 secrets.txtsecrets.txt
+secrets.txt
+secrets.txt
+secrets.txt

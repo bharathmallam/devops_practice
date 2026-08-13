@@ -1,6 +1,12 @@
 name: Terraform Destroy
 on:
   workflow_dispatch:
+    inputs:
+      destroy:
+        description: "Destroy Terraform resources?"
+        required: true
+        type: boolean
+        default: false
   push:
     branches:
       - main
@@ -42,4 +48,5 @@ jobs:
         run: terraform init
 
       - name: Terraform Destroy
+        if: ${{ inputs.destroy == true }}
         run: terraform destroy -auto-approve
